@@ -1,10 +1,10 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Header from "../components/header";
 
 export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -22,9 +22,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-fondoP p-4">
+    <div className="min-h-screen bg-fondoP  flex flex-col items-center">
+       <Header role="" />
       {/* Contenedor principal responsivo */}
-      <div className="bg-fondoS p-10 rounded-2xl shadow-xl w-full max-w-md sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl transition-all">
+        <div className="mt-6 bg-fondoS text-textoB rounded-2xl p-6 w-80 sm:w-96 shadow-lg flex flex-col items-center">
         <h1 className="text-3xl font-bold text-textoB text-center mb-8">
           Inicia Sesión
         </h1>
